@@ -1,0 +1,2 @@
+public class teeest2 {
+}

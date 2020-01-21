@@ -14,21 +14,6 @@ public class Name {
         return name;
     }
 
-    public Name whatIsCharacterName() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("What is your character name?");
-        Name name = new Name();
-        name.setName(scanner.nextLine());
-        while(!name.getName().matches("[a-zA-Z]+"))
-        {
-            //Check if it has anything other than alphabets
-            System.out.println("Letters only");
-            name.setName(scanner.nextLine());
-
-        }
-        return name;
-    }
-
 
 
     @Override

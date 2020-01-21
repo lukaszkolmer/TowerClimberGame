@@ -1,7 +1,7 @@
 package Character.BaseStatistics;
 
 public class Intelligence {
-    private Integer intelligenceValue = 20;
+    private Integer intelligenceValue = 1;
 
 
     public Integer getIntelligenceValue() {

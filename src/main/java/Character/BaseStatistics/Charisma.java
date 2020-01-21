@@ -1,7 +1,7 @@
 package Character.BaseStatistics;
 
 public class Charisma {
-    private Integer charismaValue = 20;
+    private Integer charismaValue = 1;
 
     public Integer getCharismaValue() {
         return charismaValue;

@@ -2,7 +2,7 @@ package Character.BaseStatistics;
 
 public class Agility {
 
-    private Integer agilityValue = 20;
+    private int agilityValue;
 
     public Integer getAgilityValue() {
         return agilityValue;

@@ -8,7 +8,7 @@ public class CombatStatistics {
 
     @Override
     public String toString() {
-        return "\nCombat Statistics: \n Health Points: " + healthPoints.getCurrentHealthPoints()+"/"+healthPoints.getMaxHealthPoints()
+        return "\nCombat Statistics: \n Health Points: " + healthPoints.getCurrentHealthPoints()+"/"+ healthPoints.getMaxHealthPoints()
                 + "\n Mana: " + mana.getCurrentMana() +"/"+mana.getBaseMana() + "\n Fatigue: " + fatigue.getFatigue() + "/" + fatigue.getMaxFatigue();
     }
 

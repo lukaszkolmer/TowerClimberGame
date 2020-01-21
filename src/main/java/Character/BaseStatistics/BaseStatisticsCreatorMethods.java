@@ -32,4 +32,5 @@ public class BaseStatisticsCreatorMethods {
         return charisma;
     }
 
+
 }

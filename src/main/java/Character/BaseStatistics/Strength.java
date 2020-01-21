@@ -1,7 +1,7 @@
 package Character.BaseStatistics;
 
 public class Strength {
-    private Integer strengthValue = 20;
+    private Integer strengthValue = 1;
 
 
     public Integer getStrengthValue() {

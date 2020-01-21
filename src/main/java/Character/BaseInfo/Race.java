@@ -35,34 +35,7 @@ public class Race {
         return baseStatistics;
     }
 
-    public Race whatIsCharacterRace() {
-        Race race = new Race();
-        Scanner scanner = new Scanner(System.in);
-        int allDone = 0;
-        System.out.println("What is your race?\n 1 - Human(only this works now)\n 2 - Elf \n 3 - Dwarf\n 0 - back");
-        do {
-            switch (scanner.nextInt()) {
-                case 1: {
-                    race.setRaceName(raceList.human.getRaceName());
-                    race.setRaceDescription(raceList.human.getDescription());
-                    race.setBaseStatistics(raceList.human.generateBaseHumanStatistics());
-                    allDone++;
-                    break;
-                }
-                case 2: {
-                    System.out.println("later");
-                    allDone++;
-                    break;
 
-                }
-                case 0:{
-                    allDone++;
-                }
-            }
-        }
-        while (allDone==0);
-        return race;
-    }
 
     @Override
     public String toString() {

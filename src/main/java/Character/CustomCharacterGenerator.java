@@ -1,6 +1,7 @@
 package Character;
 
 import Character.BaseInfo.CharacterBaseInfo;
+import Character.BaseInfo.CharacterBaseInfoCreationMethods;
 import Character.BaseStatistics.BaseStatistics;
 import Character.Body.CharacterBody;
 import Character.CombatStatistics.CombatStatistics;
@@ -14,7 +15,8 @@ public class CustomCharacterGenerator {
 
     public CustomCharacter createCustomCharacter(){
         RaceList raceList = new RaceList();
-        CharacterBaseInfo characterBaseInfo = CharacterBaseInfo.createCharacterBaseinfo();
+        CharacterBaseInfoCreationMethods characterBaseInfoCreationMethods = new CharacterBaseInfoCreationMethods();
+        CharacterBaseInfo characterBaseInfo = characterBaseInfoCreationMethods.createCharacterBaseInfo();
          BaseStatistics baseStatistics = raceList.human.generateBaseHumanStatistics();
          CombatStatistics combatStatistics = new CombatStatistics();
          CharacterBody characterBody = new CharacterBody();

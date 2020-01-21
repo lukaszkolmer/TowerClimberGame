@@ -6,15 +6,6 @@ public class BaseStatistics {
     private Endurance endurance;
     private Intelligence intelligence;
     private Strength strength;
-    private static BaseStatistics instance;
-
-    private BaseStatistics(){}
-
-    public static BaseStatistics getInstance(){
-        if(instance == null){
-            instance = new BaseStatistics();
-        }
-        return instance;}
 
     public BaseStatistics(Agility agility, Charisma charisma, Endurance endurance, Intelligence intelligence, Strength strength) {
         this.agility = agility;

@@ -1,18 +1,18 @@
 package Character.CombatStatistics;
 
-import Character.BaseStatistics.Intelligence;
-
 public class Mana {
 
-    private Intelligence intelligence = new Intelligence();
-    private Integer baseMana = 10 + intelligence.getIntelligenceValue();
-    private Integer currentMana = getBaseMana();
 
-    public Integer getBaseMana() {
-        return baseMana;
+    private Integer maxMana;
+    private Integer currentMana;
+
+    public Integer getMaxMana() {
+        return maxMana;
     }
-    public void baseManaUpdater(){
-        this.baseMana = 10 + intelligence.getIntelligenceValue();
+
+    public void setMaxMana(Integer baseMana) {
+        this.maxMana = baseMana;
+        currentMana = maxMana;
     }
 
     public Integer getCurrentMana() {
@@ -25,8 +25,8 @@ public class Mana {
 
     public void currentManaIncrease(Integer increseBy){
         currentMana += increseBy;
-        if (currentMana > baseMana){
-            setCurrentMana(baseMana);
+        if (currentMana > maxMana){
+            setCurrentMana(maxMana);
         }
 
     }

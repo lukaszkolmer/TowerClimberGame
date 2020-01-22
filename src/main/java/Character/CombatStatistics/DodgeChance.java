@@ -6,15 +6,18 @@ import Character.BaseStatistics.BaseStatistics;
 
 
 public class DodgeChance {
-    Agility agility = new Agility();
-    private double dodgeChance = 10 + ( agility.getAgilityValue()*0.25);
+    private double dodgeChance;
     //chance to evade attack. 1/4 of agility not counting perks, i.e 25% to dodge from 100 agility;
+    public void setDodgeChance(double dodgeChance) {
+        this.dodgeChance = dodgeChance;
+    }
 
     public double getDodgeChance() {
         return dodgeChance;
     }
 
-    public void dodgeChanceUpdater(){
-        dodgeChance = agility.getAgilityValue()*0.25;
+    @Override
+    public String toString() {
+        return "You have " + getDodgeChance() + "% to dodge a melee attack";
     }
 }

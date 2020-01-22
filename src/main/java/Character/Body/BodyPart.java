@@ -4,6 +4,7 @@ public abstract class BodyPart {
 
     private boolean crippled = false;
     private Integer healthPoints = 100;
+    private boolean itemEquippedOn = false;
 
     public Integer getHealthPoints() {
         return healthPoints;
@@ -30,4 +31,11 @@ public abstract class BodyPart {
         this.crippled = crippled;
     }
 
+    public boolean isItemEquippedOn() {
+        return itemEquippedOn;
+    }
+
+    public void setItemEquippedOn(boolean equipped) {
+        this.itemEquippedOn = equipped;
+    }
 }

@@ -10,8 +10,8 @@ import Character.Races.RaceList;
 public class CustomCharacter {
     private RaceList raceList = new RaceList();
     private CharacterBaseInfo characterBaseInfo;
-    private BaseStatistics baseStatistics = raceList.human.generateBaseHumanStatistics();
-    private CombatStatistics combatStatistics = new CombatStatistics();
+    private BaseStatistics baseStatistics;
+    private CombatStatistics combatStatistics;
     private CharacterBody characterBody = new CharacterBody();
     private Inventory inventory = new Inventory();
 

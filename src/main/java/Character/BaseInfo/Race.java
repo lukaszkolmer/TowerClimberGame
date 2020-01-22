@@ -9,7 +9,6 @@ public class Race {
     private String raceName;
     private String raceDescription;
     private BaseStatistics baseStatistics;
-    private RaceList raceList = new RaceList();
 
     public String getRaceName() {
         return raceName;

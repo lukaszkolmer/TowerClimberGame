@@ -18,6 +18,6 @@ public class CharacterBaseInfo {
 
     @Override
     public String toString() {
-        return "Your name is " + name.getName() + "\n "+ race + "\n " + gender + "\n " + level;
+        return "Your name is " + name.getName() +". You are " + gender.getGender()  + " "+ race.getRaceName() + ".\n" + level;
     }
 }

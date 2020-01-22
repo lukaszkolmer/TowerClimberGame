@@ -1,7 +1,7 @@
 package Character.BaseStatistics;
 
 public class Endurance {
-    private int enduranceValue;
+    private Integer enduranceValue;
 
     public Integer getEnduranceValue() {
         return enduranceValue;

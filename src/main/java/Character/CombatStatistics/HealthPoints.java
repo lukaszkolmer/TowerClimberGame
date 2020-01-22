@@ -1,20 +1,25 @@
 package Character.CombatStatistics;
 
-
-import Character.BaseStatistics.Endurance;
-
 public class HealthPoints {
 
-    private Endurance endurance = new Endurance();
-    private Integer maxHealthPoints = 10 + endurance.getEnduranceValue();
-    private Integer currentHealthPoints = maxHealthPoints;
+    private Integer maxHealthPoints;
+    private Integer currentHealthPoints;
+
+    public HealthPoints(Integer maxHealthPoints) {
+        this.maxHealthPoints = maxHealthPoints;
+    }
+
+    void setMaxHealthPoints(Integer maxHealthPoints) {
+        this.maxHealthPoints = maxHealthPoints;
+        currentHealthPoints = maxHealthPoints;
+    }
 
     Integer getMaxHealthPoints() {
         return maxHealthPoints;
     }
 
     public void maxHealthPointsUpdater(){
-        this.maxHealthPoints = 10 + endurance.getEnduranceValue();
+        this.maxHealthPoints = 10;
     }
 
     public Integer getCurrentHealthPoints() {

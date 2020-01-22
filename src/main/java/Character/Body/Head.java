@@ -4,7 +4,7 @@ public class Head {
     private Ears ears = new Ears();
     private Eyes eyes = new Eyes();
     private Mouth mouth = new Mouth();
-
+    private boolean itemEquippedOn = false;
     public Ears getEars() {
         return ears;
     }

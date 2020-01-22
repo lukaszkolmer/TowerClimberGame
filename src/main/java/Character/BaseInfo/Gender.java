@@ -1,15 +1,11 @@
 package Character.BaseInfo;
 
-import java.util.Scanner;
-
 public class Gender {
     private String gender;
 
     public String getGender() {
         return gender;
     }
-
-
 
     void setGender(String gender) {
         this.gender = gender;

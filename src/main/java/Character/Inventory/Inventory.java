@@ -13,9 +13,6 @@ public class Inventory {
 
     Scanner scanner = new Scanner(System.in);
 
-    private Inventory() {
-    }
-
     public void setEquippedItemList(List<Item> equippedItemList) {
         EquippedItemList = equippedItemList;
     }

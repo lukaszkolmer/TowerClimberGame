@@ -40,13 +40,10 @@ public abstract class Item {
     }
 
     //abstract public void equip();
-    public void equip(){
+    /*public void equip(){
         Inventory inventory = Inventory.getInstance();
         for (Item item: inventory.getEquipeditemList()) {
             if ()
         }
-
-
-
-    }
+    }*/
 }

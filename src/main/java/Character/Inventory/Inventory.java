@@ -13,16 +13,7 @@ public class Inventory {
 
     Scanner scanner = new Scanner(System.in);
 
-    public void setEquippedItemList(List<Item> equippedItemList) {
-        EquippedItemList = equippedItemList;
-    }
-
-    public void setUnequippedItemList(List<Item> unequippedItemList) {
-        UnequippedItemList = unequippedItemList;
-    }
-
-
-    public List<Item> getEquipeditemList() {
+    public List<Item> getEquippedItemList() {
         return EquippedItemList;
     }
 
@@ -33,14 +24,14 @@ public class Inventory {
     public void addToEquippedItemList(Item itemToEquip) {
         boolean addingFinished = false;
         do{
-        for (Item equippedItem : getEquipeditemList()) {
+        for (Item equippedItem : getEquippedItemList()) {
             if (itemToEquip.getItemType().equals(equippedItem.getItemType())) {
                 Item currentlyEquipppedItem = equippedItem;
                 System.out.println(currentlyEquipppedItem.getName() + " is equipped. Equip " + itemToEquip.getName() + "?\n 1 - Yes \n 2 - No");
                 switch (scanner.nextInt()) {
                     case 1: {
                         addToUnequippedInventory(currentlyEquipppedItem);
-                        getEquipeditemList().add(itemToEquip);
+                        getEquippedItemList().add(itemToEquip);
                         System.out.println("Unequipped " + currentlyEquipppedItem.getName()+" and equipped " + itemToEquip.getName());
                         addingFinished = true;
                         break;

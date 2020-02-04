@@ -13,7 +13,7 @@ public class CustomCharacter {
     private BaseStatistics baseStatistics;
     private CombatStatistics combatStatistics;
     private CharacterBody characterBody = new CharacterBody();
-    private Inventory inventory = new Inventory();
+    private Inventory inventory;
 
     @Override
     public String toString() {

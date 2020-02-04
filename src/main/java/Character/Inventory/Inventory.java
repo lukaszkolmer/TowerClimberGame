@@ -11,6 +11,11 @@ public class Inventory {
     private List<Item> EquippedItemList = new ArrayList<Item>();
     private List<Item> UnequippedItemList = new ArrayList<Item>();
 
+    public Inventory(List<Item> equippedItemList, List<Item> unequippedItemList) {
+        EquippedItemList = equippedItemList;
+        UnequippedItemList = unequippedItemList;
+    }
+
     Scanner scanner = new Scanner(System.in);
 
     public List<Item> getEquippedItemList() {
@@ -107,5 +112,25 @@ public class Inventory {
     public void dropUnequippedItem(Item itemToDrop) {
         getUnequippedItemList().remove(itemToDrop);
         System.out.println(itemToDrop.getName() + " dropped.");
+    }
+
+    public void dropEquippedItem(Item itemToDrop){
+        getEquippedItemList().remove(itemToDrop);
+        System.out.println(itemToDrop.getName() + " dropped.");
+    }
+
+    public void printEquippedItems(){
+        int temp = 1;
+        for (Item item: getEquippedItemList()) {
+            System.out.println(temp +". " +item);
+            temp++;
+        }
+    }
+    public void printUnEquippedItems(){
+        int temp = 1;
+        for (Item item: getUnequippedItemList()) {
+            System.out.println(temp +". " +item);
+            temp++;
+        }
     }
 }

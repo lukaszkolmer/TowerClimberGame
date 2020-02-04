@@ -4,7 +4,7 @@ import Item.Armor.Armor;
 import Item.Enhancement;
 import Item.ItemType;
 
-public class StrengthIncreaseByFive extends Armor {
+public class TrinketStrengthIncreaseByFive extends Armor {
     private Integer durability = 100;
     private ItemType itemType = ItemType.ShieldMedium;
     private String name ="Small magical trinket that makes you stronger";

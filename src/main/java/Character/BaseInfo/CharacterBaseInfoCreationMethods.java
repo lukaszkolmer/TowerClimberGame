@@ -1,10 +1,12 @@
 package Character.BaseInfo;
 
 import Character.Races.RaceList;
+import MiscMethods.UserGiveInput;
 
 import java.util.Scanner;
 
 public class CharacterBaseInfoCreationMethods {
+    private UserGiveInput userGiveInput = new UserGiveInput();
 
     private RaceList raceList = new RaceList();
     public Gender whatIsCharacterGender() {
@@ -13,7 +15,7 @@ public class CharacterBaseInfoCreationMethods {
         Gender gender = new Gender();
         System.out.println("What is your gender? \n 1 - Female\n 2 - Male");
         do {
-            switch (scanner.nextInt()) {
+            switch (userGiveInput.userGiveIntFromRange(1,2)) {
                 case 1: {
                     gender.setGender("Female");
                     allDone++;
@@ -38,7 +40,7 @@ public class CharacterBaseInfoCreationMethods {
         while(setProperly == 0)
         {
             if (!name.getName().matches("[a-zA-Z]+")) {
-                //Check if it has anything other than alphabets
+                //Check if it has anything other than letters
                 System.out.println("Letters only");
                 name.setName(scanner.nextLine());
 
@@ -56,8 +58,20 @@ public class CharacterBaseInfoCreationMethods {
         Scanner scanner = new Scanner(System.in);
         int allDone = 0;
         System.out.println("What is your race?\n 1 - Human\n 2 - Elf\n 3 - Dwarf");
+
         do {
-            switch (scanner.nextInt()) {
+            int playerChoice = userGiveInput.userGiveIntFromRange(1,3);
+            boolean playerChoseCorrectly = false;
+            do{
+            if (playerChoice != 1 &&playerChoice !=2 &&playerChoice !=3){
+                System.out.println("Please chose correct race");
+                System.out.println("\n 1 - Human\n 2 - Elf\n 3 - Dwarf");
+                playerChoice = userGiveInput.userGiveIntFromRange(1,3);
+            }
+            else {playerChoseCorrectly = true;}
+            }
+            while (!playerChoseCorrectly);
+            switch (playerChoice) {
                 case 1: {
                     race.setRaceName(raceList.human.getRaceName());
                     race.setRaceDescription(raceList.human.getDescription());

@@ -4,11 +4,9 @@ import Item.Armor.Armor;
 import Item.Item;
 import MiscMethods.SupportingMethods;
 
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 
 public class Inventory {
     private List<Item> EquippedItemList;

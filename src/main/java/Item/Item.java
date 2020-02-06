@@ -4,9 +4,7 @@ public abstract class Item {
     public Integer durability;
     public ItemType itemType;
     public String name;
-    public Enhancement Enhancement;
-    public void equipItem(){}
-    public void unEquipItem(){}
+    public BonusEffect BonusEffect;
 
     public Integer getDurability() {
         return durability;
@@ -33,15 +31,9 @@ public abstract class Item {
         return name;
     }
 
-    public Enhancement getEnhancement() {
-        return Enhancement;
+    public BonusEffect getBonusEffect() {
+        return BonusEffect;
     }
 
-    //abstract public void equip();
-    /*public void equip(){
-        Inventory inventory = Inventory.getInstance();
-        for (Item item: inventory.getEquipeditemList()) {
-            if ()
-        }
-    }*/
+
 }

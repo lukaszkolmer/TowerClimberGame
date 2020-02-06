@@ -1,7 +1,7 @@
 package Item.Armor.Trinket;
 
 import Item.Armor.Armor;
-import Item.Enhancement;
+import Item.BonusEffect;
 import Item.ItemType;
 
 public class TrinketStrengthIncreaseByFive extends Armor {
@@ -9,7 +9,7 @@ public class TrinketStrengthIncreaseByFive extends Armor {
     private ItemType itemType = ItemType.ShieldMedium;
     private String name ="Small strength trinket";
     private Integer armorValue = 0;
-    private Enhancement enhancement = Item.Enhancement.IncreaseStrengthBy5;
+    private BonusEffect bonusEffect = Item.BonusEffect.PassiveIncreaseStrengthBy5;
 
     @Override
     public Integer getDurability() {
@@ -32,8 +32,8 @@ public class TrinketStrengthIncreaseByFive extends Armor {
     }
 
     @Override
-    public Item.Enhancement getEnhancement() {
-        return enhancement;
+    public BonusEffect getBonusEffect() {
+        return bonusEffect;
     }
 
     @Override

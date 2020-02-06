@@ -16,7 +16,7 @@ public class GenerateStartingInventory {
         List<Item> unequippedItemList = new CopyOnWriteArrayList<Item>();
 
 
-       equippedItemList.add(itemsDatabase.getBootsDatabase().getBootsSteel());
+        equippedItemList.add(itemsDatabase.getBootsDatabase().getBootsSteel());
         equippedItemList.add(itemsDatabase.getChestDatabase().getChestSteel());
         equippedItemList.add(itemsDatabase.getGlovesDatabase().getGlovesSteel());
         equippedItemList.add(itemsDatabase.getHelmetDatabase().getHelmetSteel());

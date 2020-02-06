@@ -1,5 +1,5 @@
 package Item;
 
 public enum Enhancement {
-    IncreaseStrength
+    IncreaseStrengthBy5
 }

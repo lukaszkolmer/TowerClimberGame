@@ -1,15 +1,24 @@
 package Character.Inventory;
 
+import Item.Armor.Armor;
 import Item.Item;
+import MiscMethods.SupportingMethods;
 
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class Inventory {
-    private List<Item> EquippedItemList = new ArrayList<Item>();
-    private List<Item> UnequippedItemList = new ArrayList<Item>();
+    private List<Item> EquippedItemList;
+    private List<Item> UnequippedItemList;
+    private Integer armorValue;
+    SupportingMethods supportingMethods = new SupportingMethods();
+
+    public Integer getArmorValue() {
+        return armorValue;
+    }
 
     public Inventory(List<Item> equippedItemList, List<Item> unequippedItemList) {
         EquippedItemList = equippedItemList;
@@ -27,57 +36,62 @@ public class Inventory {
     }
 
     public void addToEquippedItemList(Item itemToEquip) {
+
+
+
+        Item currentlyEquippedItem = null;
         boolean addingFinished = false;
-        do{
-        for (Item equippedItem : getEquippedItemList()) {
-            if (itemToEquip.getItemType().equals(equippedItem.getItemType())) {
-                Item currentlyEquipppedItem = equippedItem;
-                System.out.println(currentlyEquipppedItem.getName() + " is equipped. Equip " + itemToEquip.getName() + "?\n 1 - Yes \n 2 - No");
-                switch (scanner.nextInt()) {
-                    case 1: {
-                        addToUnequippedInventory(currentlyEquipppedItem);
-                        getEquippedItemList().add(itemToEquip);
-                        System.out.println("Unequipped " + currentlyEquipppedItem.getName()+" and equipped " + itemToEquip.getName());
-                        addingFinished = true;
-                        break;
+        do {
+            for (Item equippedItem : getEquippedItemList()) {
+                if (itemToEquip.getItemType().equals(equippedItem.getItemType())) {
+                    currentlyEquippedItem = equippedItem;
                     }
-                    case 2:{break;}
                 }
-            }
+                if (currentlyEquippedItem != null && !addingFinished) {
+                    System.out.println(currentlyEquippedItem.getName() + " is equipped. Equip " + itemToEquip.getName() + "?\n 1 - Yes \n 2 - No");
+                    switch (supportingMethods.getUserGiveInput().userGiveIntFromRange(1, 2)) {
+                        case 1: {
+                            addToUnequippedInventory(currentlyEquippedItem);
+                            getEquippedItemList().add(itemToEquip);
+                            getUnequippedItemList().remove(itemToEquip);
+                            System.out.println("Unequipped " + currentlyEquippedItem.getName() + " and equipped " + itemToEquip.getName());
+                            addingFinished = true;
+                            break;
+                        }
+                        case 2: {
+                            break;
+                        }
+                    }
+                }
+                else{
+                    getEquippedItemList().add(itemToEquip);
+                    addingFinished = true;
+                }
         }
-        }
-        while (!addingFinished);
+            while (!addingFinished);
     }
+
 
     public void addToUnequippedInventory(Item itemToAddToUnequipped) {
         boolean addingFinished = false;
         do {
-            if (getUnequippedItemList().size() < 11) {
+            if (getUnequippedItemList().size() <= 11) {
                 getUnequippedItemList().add(itemToAddToUnequipped);
+                getEquippedItemList().remove(itemToAddToUnequipped);
+                addingFinished = true;
             } else {
                 System.out.println("Inventory is full.Do you want to drop other item to make space for " + itemToAddToUnequipped.getName() + "?\n 1 - Yes \n 2 - No");
-                switch (scanner.nextInt()) {
+                switch (supportingMethods.getUserGiveInput().userGiveIntFromRange(1,2)) {
                     case 1: {
-                        int temp = 0;
+                        int temp = 1;
                         int itemToDrop;
                         boolean chosenItemProperly = false;
                         System.out.println("Switch " + itemToAddToUnequipped.getName() + " with which item? 0 to cancel");
-                        for (Item item : getUnequippedItemList()) {
-                            System.out.println(temp + 1 + ". " + item.getName());
-                            temp++;
-                        }
-                        do {
-                        itemToDrop = scanner.nextInt() -1;
-                        if (itemToDrop < 0 || itemToDrop > temp+1) {
+                        printUnEquippedItems();
+                        itemToDrop = supportingMethods.getUserGiveInput().userGiveIntFromRange(0,getUnequippedItemList().size()) - 1;
 
-                                System.out.println("Please chose correct item");
-                                itemToDrop = scanner.nextInt();
-                        }
-                        else {chosenItemProperly = true;}
-                        }
-                        while (!chosenItemProperly);
-                        Item tempItem = getUnequippedItemList().get(itemToDrop);
-                        if (scanner.nextInt() != 0) {
+                        if (itemToDrop != -1) {
+                            Item tempItem = getUnequippedItemList().get(itemToDrop);
                             getUnequippedItemList().remove(itemToDrop);
                             getUnequippedItemList().add(itemToAddToUnequipped);
                             addingFinished = true;
@@ -114,23 +128,33 @@ public class Inventory {
         System.out.println(itemToDrop.getName() + " dropped.");
     }
 
-    public void dropEquippedItem(Item itemToDrop){
+    public void dropEquippedItem(Item itemToDrop) {
         getEquippedItemList().remove(itemToDrop);
         System.out.println(itemToDrop.getName() + " dropped.");
     }
 
-    public void printEquippedItems(){
+    public void printEquippedItems() {
         int temp = 1;
-        for (Item item: getEquippedItemList()) {
-            System.out.println(temp +". " +item);
+        for (Item item : getEquippedItemList()) {
+            System.out.println(temp + ". " + item);
             temp++;
         }
     }
-    public void printUnEquippedItems(){
+
+    public void printUnEquippedItems() {
         int temp = 1;
-        for (Item item: getUnequippedItemList()) {
-            System.out.println(temp +". " +item);
+        for (Item item : getUnequippedItemList()) {
+            System.out.println(temp + ". " + item);
             temp++;
         }
+    }
+    public Integer giveArmorValueFromEquippedItems(){
+        Integer tempArmorValue =0;
+        for (Item item: getEquippedItemList()) {
+            if (item instanceof Armor){
+                tempArmorValue += ((Armor) item).getArmorValue();
+            }
+        }
+        return tempArmorValue;
     }
 }

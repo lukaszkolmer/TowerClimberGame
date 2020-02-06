@@ -3,9 +3,6 @@ package Item.Weapon;
 import Item.Item;
 
 public abstract class Weapon extends Item {
-    private Integer durability;
-    private String itemType;
-    private String name;
     private Integer damageValue;
 
     public Integer getDamageValue() {
@@ -14,5 +11,10 @@ public abstract class Weapon extends Item {
 
     public void setDamageValue(Integer damageValue) {
         this.damageValue = damageValue;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + ". Damage Value: " + getDamageValue() +". Durability: " + getDurability();
     }
 }

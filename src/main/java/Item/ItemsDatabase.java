@@ -11,7 +11,7 @@ import Item.Armor.Trinket.TrinketDatabase;
 import Item.Weapon.OneHandSwords.OneHandedSwordsDatabase;
 
 public class ItemsDatabase {
-   BootsDatabase bootsDatabase = new BootsDatabase();
+   BootsDatabase bootsDatabase = new  BootsDatabase();
    ChestDatabase chestDatabase = new ChestDatabase();
    GlovesDatabase glovesDatabase = new GlovesDatabase();
    HelmetDatabase helmetDatabase = new HelmetDatabase();

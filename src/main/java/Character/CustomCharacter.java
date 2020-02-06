@@ -15,6 +15,30 @@ public class CustomCharacter {
     private CharacterBody characterBody = new CharacterBody();
     private Inventory inventory;
 
+    public RaceList getRaceList() {
+        return raceList;
+    }
+
+    public CharacterBaseInfo getCharacterBaseInfo() {
+        return characterBaseInfo;
+    }
+
+    public BaseStatistics getBaseStatistics() {
+        return baseStatistics;
+    }
+
+    public CombatStatistics getCombatStatistics() {
+        return combatStatistics;
+    }
+
+    public CharacterBody getCharacterBody() {
+        return characterBody;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
     @Override
     public String toString() {
         return " " + characterBaseInfo + baseStatistics + combatStatistics;
@@ -30,6 +54,12 @@ public class CustomCharacter {
         this.combatStatistics = combatStatistics;
         this.characterBody = characterBody;
         this.inventory = inventory;
+    }
+
+    public void describeThisCharacter (){
+        System.out.println(" " + characterBaseInfo + baseStatistics + combatStatistics);
+        inventory.printEquippedItems();
+        System.out.println("Total armor value from equipped items: " + inventory.giveArmorValueFromEquippedItems());
     }
 }
 

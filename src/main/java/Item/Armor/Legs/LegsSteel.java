@@ -8,4 +8,24 @@ public class LegsSteel extends Armor {
     private ItemType itemType = ItemType.Legs;
     private String name ="Steel leg armor";
     private Integer armorValue = 20;
+
+    @Override
+    public Integer getDurability() {
+        return durability;
+    }
+
+    @Override
+    public ItemType getItemType() {
+        return itemType;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public Integer getArmorValue() {
+        return armorValue;
+    }
 }

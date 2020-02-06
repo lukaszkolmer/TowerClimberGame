@@ -6,16 +6,17 @@ import Item.ItemsDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class GenerateStartingInventory {
 
-    public Inventory generateStartingInventory(){
+    public Inventory createStartingEquipment(){
         ItemsDatabase itemsDatabase = new ItemsDatabase();
-        List<Item> equippedItemList = new ArrayList<Item>();
-        List<Item> unequippedItemList = new ArrayList<Item>();
+        List<Item> equippedItemList = new CopyOnWriteArrayList<Item>();
+        List<Item> unequippedItemList = new CopyOnWriteArrayList<Item>();
 
 
-        equippedItemList.add(itemsDatabase.getBootsDatabase().getBootsSteel());
+       equippedItemList.add(itemsDatabase.getBootsDatabase().getBootsSteel());
         equippedItemList.add(itemsDatabase.getChestDatabase().getChestSteel());
         equippedItemList.add(itemsDatabase.getGlovesDatabase().getGlovesSteel());
         equippedItemList.add(itemsDatabase.getHelmetDatabase().getHelmetSteel());

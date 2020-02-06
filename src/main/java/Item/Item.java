@@ -1,12 +1,10 @@
 package Item;
 
-import Character.Inventory.Inventory;
-
 public abstract class Item {
-    private Integer durability;
-    private ItemType itemType;
-    private String name;
-    private Enhancement Enhancement;
+    public Integer durability;
+    public ItemType itemType;
+    public String name;
+    public Enhancement Enhancement;
     public void equipItem(){}
     public void unEquipItem(){}
 

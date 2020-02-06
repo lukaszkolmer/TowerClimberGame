@@ -13,6 +13,7 @@ public class CombatStatistics {
         this.mana = mana;
     }
 
+
     public DodgeChance getDodgeChance() {
         return dodgeChance;
     }

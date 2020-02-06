@@ -1,9 +1,9 @@
 package Item.Weapon.OneHandSwords;
 
 public class OneHandedSwordsDatabase {
-    OneHandSwordsShort oneHandSwordsShort = new OneHandSwordsShort();
+     OneHandSwordsShort oneHandSwordsShort = new OneHandSwordsShort();
 
-    public OneHandSwordsShort getOneHandSwordsShort() {
+    public  OneHandSwordsShort getOneHandSwordsShort() {
         return oneHandSwordsShort;
     }
 }

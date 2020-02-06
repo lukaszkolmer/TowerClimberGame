@@ -12,4 +12,9 @@ public abstract class Armor extends Item {
     public void setArmorValue(Integer armorValue) {
         this.armorValue = armorValue;
     }
+
+    @Override
+    public String toString() {
+        return getName() + ". Armor Value: " + getArmorValue() +". Durability: " + getDurability();
+    }
 }

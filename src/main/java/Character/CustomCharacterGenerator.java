@@ -24,7 +24,7 @@ public class CustomCharacterGenerator {
          BaseStatistics baseStatistics = characterBaseInfo.race.getBaseStatistics();
          CombatStatistics combatStatistics = combatStatisticsCreationMethods.createCombatStatistics(baseStatistics);
          CharacterBody characterBody = new CharacterBody();
-         Inventory inventory = generateStartingInventory.generateStartingInventory();
+         Inventory inventory = generateStartingInventory.createStartingEquipment();
         return new CustomCharacter(characterBaseInfo,baseStatistics,combatStatistics,characterBody,inventory);
     }
 }

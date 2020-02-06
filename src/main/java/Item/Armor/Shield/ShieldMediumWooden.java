@@ -8,4 +8,24 @@ public class ShieldMediumWooden extends Armor {
     private ItemType itemType = ItemType.ShieldMedium;
     private String name ="Wooden medium shield";
     private Integer armorValue = 10;
+
+    @Override
+    public Integer getDurability() {
+        return durability;
+    }
+
+    @Override
+    public ItemType getItemType() {
+        return itemType;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public Integer getArmorValue() {
+        return armorValue;
+    }
 }

@@ -6,7 +6,6 @@ import MiscMethods.SupportingMethods;
 import java.util.Scanner;
 
 public class InventoryEngine {
-    private Scanner scanner = new Scanner(System.in);
     private SupportingMethods supportingMethods = new SupportingMethods();
 
     public void inventoryMenu(CustomCharacter customCharacter) {

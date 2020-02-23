@@ -9,15 +9,15 @@ public class MainMenuEngine {
         clearConsole();
         boolean gameShouldWork = true;
         do {
-            System.out.println("1 - Explore(not working now dont click me baka) \n 2 - Character info(also no, baka)\n 3 - Inventory \n 0 - Save and exit(no, baka)");
+            System.out.println(" 1 - Explore(not working  dont click me ) \n 2 - Character info(also no)\n 3 - Inventory \n 0 - Save and exit(not saving yet)");
             int playerChoice = supportingMethods.getUserGiveInput().userGiveIntFromRange(0,3);
             switch (playerChoice){
                 case 1:{
-                    System.out.println("obviously i cannot read.");
+                    System.out.println("obviously i cannot read. - user");
                     break;
                 }
                 case 2:{
-                    System.out.println("english is beyond my comprehension - Kristoff 2020");
+                    System.out.println("english is beyond my comprehension - user");
                     break;
                 }
                 case 3:{
@@ -26,7 +26,7 @@ public class MainMenuEngine {
                     break;
                 }
                 case 0:{
-                    System.out.println("Exiting game. Baka.");
+                    System.out.println("Exiting game.");
                     gameShouldWork = false;
                     break;
                 }
